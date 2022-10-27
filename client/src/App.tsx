@@ -1,11 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <p>Component goes hear</p>
-    </div>
+    <Router>
+      <Switch>
+        <Redirect exact from="/" to="/homepage" />
+      </Switch>
+    </Router>
   );
 }
 
