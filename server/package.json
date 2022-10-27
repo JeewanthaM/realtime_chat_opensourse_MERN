@@ -1,0 +1,47 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "Server for the realtime chat app\"",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/JeewanthaM/realtime_chat_MERN.git"
+    },
+    "keywords": [
+      "chat",
+      "chatApp",
+      "MERN",
+      "node",
+      "react",
+      "mongodb",
+      "express"
+    ],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/JeewanthaM/realtime_chat_MERN/issues"
+    },
+    "homepage": "https://github.com/JeewanthaM/realtime_chat_MERN#readme",
+    "dependencies": {
+      "bcrypt": "^5.0.1",
+      "body-parser": "^1.18.3",
+      "cookie-parser": "^1.4.3",
+      "cors": "^2.8.5",
+      "debug": "^4.1.1",
+      "express": "^4.17.1",
+      "jsonwebtoken": "^8.5.1",
+      "moment": "^2.24.0",
+      "mongoose": "^5.4.20",
+      "react-redux": "^5.0.7",
+      "saslprep": "^1.0.3",
+      "socket.io": "^4.3.1",
+      "supports-color": "^7.1.0"
+    },
+    "devDependencies": {
+      "concurrently": "^4.1.0",
+      "nodemon": "^1.19.1"
+    }
+  }
