@@ -11,7 +11,19 @@ export default function AppButton(props: {
   loadingColor?: string;
 }) {
   return (
-    <p>Button</p>
+    <button
+      style={props.style}
+      disabled={props.isLoading || props.disable}
+      onClick={() => {
+        props.onClick?.();
+      }}
+      className={"btn green-button " + props.className}
+    >
 
+        {
+            props.children
+        }
+
+    </button>
   );
 }
