@@ -1,0 +1,45 @@
+.side-drawer-header {
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+  flex-wrap: wrap;
+  min-height: 68px;
+  align-items: center;
+  font-weight: 500;
+  padding: 15px 0;
+  min-height: 15rem;;
+
+  .main-image {
+    margin-top: 15px;
+  }
+
+  .icon-close {
+    font-size: 20px;
+    color: #ffbe46;
+    float: left;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .profile {
+    text-align: center;
+    margin-bottom: 10px;
+
+    .title {
+      margin-top: 10px;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 18px;
+    }
+
+    .sub-title {
+      font-weight: 500;
+      color: gray;
+    }
+
+    .date {
+      font-size: 14px;
+    }
+  }
+}
