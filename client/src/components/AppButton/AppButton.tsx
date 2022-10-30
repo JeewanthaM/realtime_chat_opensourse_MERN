@@ -27,6 +27,16 @@ export default function AppButton(props: {
       ) : (
         props.children
       )}
+
+    {/* TODO - only adde for testing */}
+      {props.disable ? (
+        <ClipLoader
+          size={20}
+          color={props.loadingColor ? props.loadingColor : "white"}
+        />
+      ) : (
+        props.children
+      )}
     </button>
   );
 }
