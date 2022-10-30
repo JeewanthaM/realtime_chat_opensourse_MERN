@@ -30,10 +30,20 @@ function App() {
                 exact
                 component={QrGenerator}
               />
-
+              <Route
+                path={"/start/qr/:inviteCode"}
+                exact
+                component={QrGenerator}
+              />
+              <Route path="/start/login/:clearData?" exact component={login} />
+              <Route
+                path="/start/verify-account"
+                exact
+                component={VerifyAccount}
+              />
+              <Route path="/start/verify-phone" exact component={VerifyPhone} />
               <Route path="/start/feedback/:type" exact component={ContactUs} />
               <Route path="/start/faq" exact component={FAQ} />
-
             </Switch>
           </Route>
 
