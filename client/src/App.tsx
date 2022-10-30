@@ -30,11 +30,6 @@ function App() {
                 exact
                 component={QrGenerator}
               />
-              <Route
-                path={"/start/qr/:inviteCode"}
-                exact
-                component={QrGenerator}
-              />
               <Route path="/start/login/:clearData?" exact component={login} />
               <Route
                 path="/start/verify-account"
@@ -42,8 +37,32 @@ function App() {
                 component={VerifyAccount}
               />
               <Route path="/start/verify-phone" exact component={VerifyPhone} />
+              <Route
+                path="/start/verification-result"
+                exactcomponent={VerificationResult}
+              />
+              <Route
+                path="/start/reset-password/:token"
+                exact
+                component={ResetPassword}
+              />
               <Route path="/start/feedback/:type" exact component={ContactUs} />
               <Route path="/start/faq" exact component={FAQ} />
+              <Route
+                path="/start/select-condominium"
+                exact
+                component={SelectCondominium}
+              />
+              <Route
+                path="/start/forgot-password"
+                exact
+                component={ForgotPassword}
+              />
+              <Route
+                path="/start/print/:invoiceId"
+                exact
+                component={PrintInvoice}
+              />
             </Switch>
           </Route>
 
