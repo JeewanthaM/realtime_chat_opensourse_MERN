@@ -37,3 +37,22 @@ export default function Sidebar() {
     </div>
   );
 }
+
+function SidebarLink(props: { to?; children }) {
+    let active = "";
+
+    if (location.pathname == props.to) {
+      active = "active";
+    }
+
+    return (
+      <Link to={props.to} className={"nav-link " + active}>
+        {props.children}
+      </Link>
+    );
+  }
+
+  function openInNewTab(url) {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  }
