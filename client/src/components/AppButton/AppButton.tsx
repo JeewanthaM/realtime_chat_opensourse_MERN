@@ -19,11 +19,14 @@ export default function AppButton(props: {
       }}
       className={"btn green-button " + props.className}
     >
-
-        {
-            props.children
-        }
-
+      {props.isLoading ? (
+        <ClipLoader
+          size={20}
+          color={props.loadingColor ? props.loadingColor : "white"}
+        />
+      ) : (
+        props.children
+      )}
     </button>
   );
 }
