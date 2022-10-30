@@ -9,6 +9,7 @@ import {
   Switch,
   useHistory,
 } from "react-router-dom";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
@@ -22,8 +23,9 @@ function App() {
 
         <Route path="/">
           <div className="">
-            {/* sidebar goes hear */}
+          <Sidebar />
             <div>
+            <Headers />
               <Switch>
                 <Route path="/" exact>
                   <Redirect to={"/start/login"} />
