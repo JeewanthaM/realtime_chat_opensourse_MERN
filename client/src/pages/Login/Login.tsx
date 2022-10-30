@@ -19,7 +19,7 @@ export default function Login() {
             }
         }
     }, []);
-    
+
   return (
     <div className="section login-wrapper">
     <div className="container">
@@ -69,5 +69,28 @@ export default function Login() {
         </div>
     </div>
 </div>
-  )
+  );
+
+  async function handleLogin() {
+    setIsLoading(true);
+    try {
+        let result = (await apiService.login({
+            username: email,
+            password,
+            deviceCode: getDeviceCode(),
+        })) as any;
+        // debugger;
+        result = result.data;
+        saveToken(result.token);
+        await getUserDetails();
+        history.push("/dashboard");
+    } catch (error: any) {
+        console.log(error?.response, "error-login");
+
+        if (!handleLoginErrorNavigation(error, email, history)) {
+            handleErrors(error);
+        }
+    }
+    setIsLoading(false);
+}
 }
