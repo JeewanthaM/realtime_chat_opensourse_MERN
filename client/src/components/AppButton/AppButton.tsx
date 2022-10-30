@@ -1,7 +1,17 @@
-import React from 'react'
-
-export default function AppButton() {
+import React from "react";
+import { CSSProperties } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+export default function AppButton(props: {
+  isLoading?: boolean;
+  onClick?: CallableFunction;
+  children?: any;
+  className?: string;
+  style?: CSSProperties;
+  disable?: boolean;
+  loadingColor?: string;
+}) {
   return (
-    <div>AppButton</div>
-  )
+    <p>Button</p>
+
+  );
 }
