@@ -17,6 +17,18 @@ if (config.env === 'dev') {
   mongoose.set('debug', true)
 }
 
+if (config.env === 'qa') {
+  mongoose.set('debug', true)
+}
+
+if (config.env === 'uat') {
+  mongoose.set('debug', true)
+}
+
+if (config.env === 'prod') {
+  mongoose.set('debug', false)
+}
+
 exports.connect = () => {
   var mongoURI = (config.env === 'prod' || 'dev' ? config.mongo.uri : config.mongo.testURI)
 
