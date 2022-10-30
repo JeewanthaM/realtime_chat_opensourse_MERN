@@ -6,7 +6,7 @@ const APIError = require('../utils/APIError')
 const httpStatus = require('http-status')
 const bluebird = require('bluebird')
 
-
+// handleJWT with roles
 const handleJWT = (req, res, next, roles) => async (err, user, info) => {
   const error = err || info
   const logIn = bluebird.promisify(req.logIn)
@@ -15,7 +15,15 @@ const handleJWT = (req, res, next, roles) => async (err, user, info) => {
     httpStatus.UNAUTHORIZED
   )
 
- 
+  // log user in
+  try {
+    if (error || !user) throw error
+    await logIn(user, { session: false })
+  } catch (e) {
+    return next(apiError)
+  }
+
+
 
   req.user = user
 
