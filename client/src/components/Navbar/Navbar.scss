@@ -1,11 +1,51 @@
-@import "../../colors.scss";
-
 .navbar-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   margin-top: 3rem;
+  .tab-section {
+    width: auto;
+    // margin-top: 3rem;
+    border-bottom: 1px solid rgba(87, 87, 97, 0.1);
+  }
 
+  .tab-section a {
+    // min-width: 10rem;
+    padding-bottom: 0.6rem;
+    margin-right: 25px;
+    color: #40404d;
 
+    &:hover {
+      color: #8acb87;
+    }
+  }
+
+  .tab-section a {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 11px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .gear {
+    background-color: $bg-grey;
+    margin-right: 1rem;
+  }
+
+  .add {
+    background-color: $primary-color;
+  }
+
+  .tab-section .active {
+    color: $primary-color;
+    border-bottom: 2px solid $primary-color;
+    margin-bottom: 0 - 1.33px;
+  }
 }
