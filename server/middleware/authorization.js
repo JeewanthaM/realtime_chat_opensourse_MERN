@@ -23,7 +23,10 @@ const handleJWT = (req, res, next, roles) => async (err, user, info) => {
     return next(apiError)
   }
 
-
+  // see if user is authorized to do the action
+  if (!roles.includes(user.role)) {
+    return next(new APIError('Forbidden', httpStatus.FORBIDDEN))
+  }
 
   req.user = user
 
