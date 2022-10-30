@@ -1,6 +1,25 @@
 import React from 'react'
 
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const apiService = new ApiService();
+    const history = useHistory();
+    const [isLoading, setIsLoading] = useState(false);
+    const [user, setUser] = useContext(UserDetails);
+    const { clearData } = useParams() as any;
+
+    useEffect(() => {
+        if (clearData) {
+            removeToken();
+            setUser(null);
+        } else {
+            if (user) {
+                history.push("/dashboard");
+            }
+        }
+    }, []);
+    
   return (
     <div className="section login-wrapper">
     <div className="container">
