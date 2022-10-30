@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
+import { CSSProperties } from "react";
 
-export default function ProfileImage() {
-  return (
-    <div>ProfileImage</div>
-  )
+import "./ProfileImage.scss";
+
+export default function ProfileImage(props: { src: string; className?: string; style?: CSSProperties; }) {
+    return (<img src={src} style={props.style} className={"profile-pic " + props.className} />);
 }
