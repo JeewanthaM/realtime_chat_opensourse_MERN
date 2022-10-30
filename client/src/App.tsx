@@ -10,32 +10,50 @@ import {
   useHistory,
 } from "react-router-dom";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <HashRouter>
-      <Switch>
-        <Route path="/start">
-          <Switch>
-            <Route path={"/start/qr/:inviteCode"} exact />
-          </Switch>
-        </Route>
+    <div className="App">
+      <ToastContainer hideProgressBar={true} />
+      <AppLoading
+        color="#8ACB87"
+        style={{ left: 0, backgroundColor: "white", zIndex: 15 }}
+        isLoading={isLoading}
+      />
+      <HashRouter>
+        <Switch>
+          <Route path="/start">
+            <Switch>
+              <Route
+                path={"/start/qr/:inviteCode"}
+                exact
+                component={QrGenerator}
+              />
 
-        <Route path="/">
-          <div className="">
-          <Sidebar />
-            <div>
-            <Headers />
-              <Switch>
-                <Route path="/" exact>
-                  <Redirect to={"/start/login"} />
-                </Route>
-              </Switch>
+              <Route path="/start/feedback/:type" exact component={ContactUs} />
+              <Route path="/start/faq" exact component={FAQ} />
+
+            </Switch>
+          </Route>
+
+          <Route path="/">
+            <div className="dashboard-layout">
+              <Sidebar />
+              <div>
+                <Header />
+                <Switch>
+                  <Route path="/" exact>
+                    <Redirect to={"/start/login"} />
+                  </Route>
+                  <Route path="/dashboard" exact component={Dashboard} />
+                </Switch>
+              </div>
             </div>
-          </div>
-        </Route>
-      </Switch>
-    </HashRouter>
+          </Route>
+        </Switch>
+      </HashRouter>
+    </div>
   );
 }
 
