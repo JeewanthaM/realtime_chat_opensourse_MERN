@@ -21,6 +21,18 @@ const serverTemp = http.createServer((req, res) => {
   res.end('Hello World');
 });
 
+const serverQA = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World QA');
+});
+
+const serverUAT = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World DEV');
+});
+
 server.listen(port, () => {
   console.log(`Server running at port ${port}`);
 });
