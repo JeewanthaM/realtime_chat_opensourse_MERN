@@ -13,14 +13,11 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 
 function App() {
+  const [user, setUser] = useContext(UserDetails);
+
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="App">
-      <ToastContainer hideProgressBar={true} />
-      <AppLoading
-        color="#8ACB87"
-        style={{ left: 0, backgroundColor: "white", zIndex: 15 }}
-        isLoading={isLoading}
-      />
       <HashRouter>
         <Switch>
           <Route path="/start">
